@@ -15,14 +15,7 @@
         // Clear the input box for the next choice
 
 /* Returns a random integer between a and b, inclusive. */
-function randomInt(a, b) {
-  if (!(Number.isInteger(a) && Number.isInteger(b))) {
-    throw "a and b must both be integers";
-  } else if (b < a) {
-    throw "b must be greater than or equal to a";
-  }
-  return a + Math.floor(Math.random() * (b+1-a));
-}
+
 
 // *************************** YOUR CODE BELOW *******************************
 //******************TEST EARLY AND OFTEN USING console.log() ******************
@@ -32,7 +25,36 @@ function randomInt(a, b) {
 
 
 //FUNCTIONS
+var userChoice = prompt("Do you choose rock, paper or scissors?");
+var computerChoice = Math.floor(Math.random() * 3)
 
+if (computerChoice === 0) {
+    computerChoice = "rock";
+} else if(computerChoice === 1) {
+    computerChoice = "paper";
+} else {
+    computerChoice = "scissors";
+} 
+
+var compare = function(userChoice, computerChoice) {
+ 
+  if(userChoice === "rock" && computerChoice === "paper") {
+    console.log("Computer Wins");
+  }else if(userChoice === "rock" && computerChoice === "scissors") {
+    console.log("User Wins");
+  }else if(userChoice === "paper" && computerChoice === "rock") {
+    console.log("User Wins");
+  }else if(userChoice === "paper" && computerChoice === "scissors") {
+    console.log("Computer Wins");
+  }else if(userChoice === "scissors" && computerChoice === "rock") {
+    console.log("Computer Wins");
+  }else if(userChoice === "scissors" && computerChoice === "paper") {
+    console.log("User Wins");
+  }else{
+    console.log("Tie")
+  }
+}; 
+compare();
 
 
 // DOCUMENT READY FUNCTION
