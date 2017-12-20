@@ -31,33 +31,41 @@
 
 $(document).ready(function() {
 
+var counter = 0;
+
    $("img").hide();
 
 function compare(userChoice, computerChoice) {
  
-  if(userChoice === "Rock" && computerChoice === "Paper") {
+  if(userChoice === "rock" && computerChoice === "Paper") {
     console.log("Computer Wins");
     $("#P3").show();
-  }else if(userChoice === "Rock" && computerChoice === "Scissors") {
+  }else if(userChoice === "rock" && computerChoice === "Scissors") {
     console.log("User Wins");
     $("#R3").show();
-  }else if(userChoice === "Paper" && computerChoice === "Rock") {
+    counter = counter+1;
+    $("#score").text(counter);
+  }else if(userChoice === "paper" && computerChoice === "Rock") {
     console.log("User Wins");
     $("#P3").show();
-  }else if(userChoice === "Paper" && computerChoice === "Scissors") {
+    counter = counter+1;
+    $("#score").text(counter);
+  }else if(userChoice === "paper" && computerChoice === "Scissors") {
     console.log("Computer Wins");
     $("#S3").show();
-  }else if(userChoice === "Scissors" && computerChoice === "Rock") {
+  }else if(userChoice === "scissors" && computerChoice === "Rock") {
     console.log("Computer Wins");
     $("#R3").show();
-  }else if(userChoice === "Scissors" && computerChoice === "Paper") {
+  }else if(userChoice === "scissors" && computerChoice === "Paper") {
     console.log("User Wins");
     $("#S3").show();
-  }else if(userChoice === "Paper" && computerChoice === "Paper"){
+    counter = counter+1;
+    $("#score").text(counter);
+  }else if(userChoice === "paper" && computerChoice === "Paper"){
     $("#Tie").show();
-  }else if(userChoice === "Rock" && computerChoice === "Rock"){
+  }else if(userChoice === "rock" && computerChoice === "Rock"){
     $("#Tie").show();
-  }else if(userChoice === "Scissors" && computerChoice === "Scissors"){
+  }else if(userChoice === "scissors" && computerChoice === "Scissors"){
     $("#Tie").show();
   }
 }
@@ -67,7 +75,7 @@ function compare(userChoice, computerChoice) {
 $("#play").click(function() {
   var card = $("input").val();
   
-  var userChoice = $("input").val();
+  var userChoice = $("input").val().toLowerCase();
   var items = ["Rock","Paper","Scissors"];
   var index = Math.floor(Math.random() * items.length);
   var computerChoice = items[index];
@@ -86,13 +94,13 @@ console.log(userChoice, computerChoice);
 compare(userChoice, computerChoice);
 
 
-if(userChoice === "Rock"){
+if(userChoice === "rock"){
     $("#R2").show();
-}else if(userChoice === "Paper"){
+}else if(userChoice === "paper"){
     $("#P2").show();
-}else if(userChoice === "Scissors"){
+}else if(userChoice === "scissors"){
     $("#S2").show();
-}else if(userChoice !== "Scissors" || "Paper" || "Rock"){
+}else if(userChoice !== "scissors" || "paper" || "rock"){
     alert("Not Valid Choice");
 }
 });
@@ -106,6 +114,8 @@ $("#reset").click(function(){
     
     $("input").val("");
 });
+
+
 
 });
 
