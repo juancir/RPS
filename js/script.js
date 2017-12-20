@@ -26,35 +26,61 @@
 
 //FUNCTIONS
 var userChoice = prompt("Do you choose rock, paper or scissors?");
-var computerChoice = Math.floor(Math.random() * 3)
 
-if (computerChoice === 0) {
-    computerChoice = "rock";
-} else if(computerChoice === 1) {
-    computerChoice = "paper";
-} else {
-    computerChoice = "scissors";
-} 
+var items = ["Rock","Paper","Scissors"];
+var index = Math.floor(Math.random() * items.length);
+var computerChoice = items[index];
+
 
 var compare = function(userChoice, computerChoice) {
  
-  if(userChoice === "rock" && computerChoice === "paper") {
+  if(userChoice == "Rock" && computerChoice == "Paper") {
     console.log("Computer Wins");
-  }else if(userChoice === "rock" && computerChoice === "scissors") {
+  }else if(userChoice == "Rock" && computerChoice == "Scissors") {
     console.log("User Wins");
-  }else if(userChoice === "paper" && computerChoice === "rock") {
+  }else if(userChoice == "Paper" && computerChoice == "Rock") {
     console.log("User Wins");
-  }else if(userChoice === "paper" && computerChoice === "scissors") {
+  }else if(userChoice == "Paper" && computerChoice == "Scissors") {
     console.log("Computer Wins");
-  }else if(userChoice === "scissors" && computerChoice === "rock") {
+  }else if(userChoice == "Scissors" && computerChoice == "Rock") {
     console.log("Computer Wins");
-  }else if(userChoice === "scissors" && computerChoice === "paper") {
+  }else if(userChoice == "Scissors" && computerChoice == "Paper") {
     console.log("User Wins");
-  }else{
-    console.log("Tie")
   }
 }; 
-compare();
+
+compare(userChoice, computerChoice);
+// BACKUP
+// var userChoice = prompt("Do you choose rock, paper or scissors?");
+// var computerChoice = Math.floor(Math.random() * 3)
+
+// if (computerChoice === 0) {
+//     computerChoice = "rock";
+// } else if(computerChoice === 1) {
+//     computerChoice = "paper";
+// } else {
+//     computerChoice = "scissors";
+// } 
+
+// var compare = function(userChoice, computerChoice) {
+ 
+//   if(userChoice === "rock" && computerChoice === "paper") {
+//     console.log("Computer Wins");
+//   }else if(userChoice === "rock" && computerChoice === "scissors") {
+//     console.log("User Wins");
+//   }else if(userChoice === "paper" && computerChoice === "rock") {
+//     console.log("User Wins");
+//   }else if(userChoice === "paper" && computerChoice === "scissors") {
+//     console.log("Computer Wins");
+//   }else if(userChoice === "scissors" && computerChoice === "rock") {
+//     console.log("Computer Wins");
+//   }else if(userChoice === "scissors" && computerChoice === "paper") {
+//     console.log("User Wins");
+//   }else{
+//     console.log("Tie")
+//   }
+// }; 
+// compare();
 
 
 // DOCUMENT READY FUNCTION

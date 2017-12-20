@@ -2,3 +2,14 @@
     height:500px;
     background-color: black;
 }
+img{
+    height:300px;
+    width:300px;
+    /*border:1px solid black;*/
+}
+#userTitle{
+    text-align:center;
+}
+#comTitle{
+    text-align:center;
+}
