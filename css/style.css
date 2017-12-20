@@ -1,6 +1,7 @@
 .battleArena{
     height:500px;
-    background-color: black;
+    margin-top: 20px;
+    /*background-color: black;*/
 }
 img{
     height:300px;

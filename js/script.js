@@ -25,63 +25,87 @@
 
 
 //FUNCTIONS
-var userChoice = prompt("Do you choose rock, paper or scissors?");
-
-var items = ["Rock","Paper","Scissors"];
-var index = Math.floor(Math.random() * items.length);
-var computerChoice = items[index];
-
-
-var compare = function(userChoice, computerChoice) {
- 
-  if(userChoice == "Rock" && computerChoice == "Paper") {
-    console.log("Computer Wins");
-  }else if(userChoice == "Rock" && computerChoice == "Scissors") {
-    console.log("User Wins");
-  }else if(userChoice == "Paper" && computerChoice == "Rock") {
-    console.log("User Wins");
-  }else if(userChoice == "Paper" && computerChoice == "Scissors") {
-    console.log("Computer Wins");
-  }else if(userChoice == "Scissors" && computerChoice == "Rock") {
-    console.log("Computer Wins");
-  }else if(userChoice == "Scissors" && computerChoice == "Paper") {
-    console.log("User Wins");
-  }
-}; 
-
-compare(userChoice, computerChoice);
-// BACKUP
-// var userChoice = prompt("Do you choose rock, paper or scissors?");
-// var computerChoice = Math.floor(Math.random() * 3)
-
-// if (computerChoice === 0) {
-//     computerChoice = "rock";
-// } else if(computerChoice === 1) {
-//     computerChoice = "paper";
-// } else {
-//     computerChoice = "scissors";
-// } 
-
-// var compare = function(userChoice, computerChoice) {
- 
-//   if(userChoice === "rock" && computerChoice === "paper") {
-//     console.log("Computer Wins");
-//   }else if(userChoice === "rock" && computerChoice === "scissors") {
-//     console.log("User Wins");
-//   }else if(userChoice === "paper" && computerChoice === "rock") {
-//     console.log("User Wins");
-//   }else if(userChoice === "paper" && computerChoice === "scissors") {
-//     console.log("Computer Wins");
-//   }else if(userChoice === "scissors" && computerChoice === "rock") {
-//     console.log("Computer Wins");
-//   }else if(userChoice === "scissors" && computerChoice === "paper") {
-//     console.log("User Wins");
-//   }else{
-//     console.log("Tie")
-//   }
-// }; 
-// compare();
 
 
 // DOCUMENT READY FUNCTION
+
+$(document).ready(function() {
+
+   $("img").hide();
+
+function compare(userChoice, computerChoice) {
+ 
+  if(userChoice === "Rock" && computerChoice === "Paper") {
+    console.log("Computer Wins");
+    $("#P3").show();
+  }else if(userChoice === "Rock" && computerChoice === "Scissors") {
+    console.log("User Wins");
+    $("#R3").show();
+  }else if(userChoice === "Paper" && computerChoice === "Rock") {
+    console.log("User Wins");
+    $("#P3").show();
+  }else if(userChoice === "Paper" && computerChoice === "Scissors") {
+    console.log("Computer Wins");
+    $("#S3").show();
+  }else if(userChoice === "Scissors" && computerChoice === "Rock") {
+    console.log("Computer Wins");
+    $("#R3").show();
+  }else if(userChoice === "Scissors" && computerChoice === "Paper") {
+    console.log("User Wins");
+    $("#S3").show();
+  }else if(userChoice === "Paper" && computerChoice === "Paper"){
+    $("#Tie").show();
+  }else if(userChoice === "Rock" && computerChoice === "Rock"){
+    $("#Tie").show();
+  }else if(userChoice === "Scissors" && computerChoice === "Scissors"){
+    $("#Tie").show();
+  }
+}
+
+
+
+$("#play").click(function() {
+  var card = $("input").val();
+  
+  var userChoice = $("input").val();
+  var items = ["Rock","Paper","Scissors"];
+  var index = Math.floor(Math.random() * items.length);
+  var computerChoice = items[index];
+
+$("img").hide();
+console.log(userChoice, computerChoice);
+
+  if(computerChoice === "Rock"){
+    $("#R1").show();
+}else if(computerChoice === "Paper"){
+    $("#P1").show();
+}else if(computerChoice === "Scissors"){
+    $("#S1").show();
+}
+
+compare(userChoice, computerChoice);
+
+
+if(userChoice === "Rock"){
+    $("#R2").show();
+}else if(userChoice === "Paper"){
+    $("#P2").show();
+}else if(userChoice === "Scissors"){
+    $("#S2").show();
+}else if(userChoice !== "Scissors" || "Paper" || "Rock"){
+    alert("Not Valid Choice");
+}
+});
+
+$("#reset").click(function(){
+  $("img").hide();
+  $("input").val("");
+});
+
+  $("#reset").click(function(){
+    
+    $("input").val("");
+});
+
+});
 
